@@ -1,0 +1,160 @@
+body {
+    font-family: Gill Sans, sans-serif;
+    background-color: rgb(244, 254, 255);
+    margin: inherit;
+}
+
+body img {
+    object-fit: cover;
+    width: 100%;
+    height: 566px;
+    filter: brightness(.8);
+    -webkit-transform: translate(0%, 0%); 
+    transform: translate(0%, 0%);
+}
+
+.head-img-wrapper {
+    /* background-image: url('../img/bg-masthead.jpg');
+    background-size: cover; */
+    width: 100%;
+    height: 566px;
+
+}
+
+.title-wrapper {
+    position: absolute;
+    top: 23%;
+    width: 80%;
+    margin: 0px 10%;
+}
+
+/* .component-wrapper {
+    box-shadow: 2px 4px 3px 0 rgba(0,0,0,.25);
+    background: linear-gradient( rgba(255, 255, 255, 0.9) 0%, white 25%);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, white 25%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    /* background-repeat-x: initial;
+    background-repeat-y: initial; */
+    /* background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    position: relative;
+    margin: auto; */
+    /* border: solid 2px gray; */
+    /* margin-right: 33%; */
+    /* margin: 0, 22%;
+    margin-top: -82px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    width: 66%;
+    margin-left: 17%;
+    height: 250px;
+    border-radius: 4px;
+} */ 
+
+.text-format {
+    text-align: center;
+
+}
+
+.title-wrapper h1 {
+    text-align: center;
+    color: white;
+    font-size: 47px;
+    letter-spacing: 6px;
+    font-weight: 350;
+}
+
+.form-wrapper {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form-control {
+    height: 38px;
+    border: solid 1px rgb(171, 170, 170);
+}
+
+.form-attribute {
+    display: flex;
+    flex-direction: row;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 3;
+}
+
+button {
+    width: 108px;
+}
+
+#artist-name {
+    width: 270px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#location {
+    width: 128px;
+}
+
+#date {
+    width: 210px
+}
+
+.btn {
+    width: 126px;
+    background-color: rgb(8, 110, 214);
+    color: white;
+    font-family: Gill Sans, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+/* Main Contents */
+.img-showcase {
+    display: block;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 440px;
+}
+
+.show-case-text {
+    width: 50%;
+}
+
+.first-img {
+    background-image: url('../img/bg-showcase-1.jpg');
+    background-size: cover;
+    width: 50%;
+}
+
+.second-img {
+    background-image: url('../img/bg-showcase-2.jpg');
+    background-size: cover;
+    width: 50%;
+}
+
+.third-img {
+    background-image: url('../img/bg-showcase-3.jpg');
+    background-size: cover;
+    width: 50%;
+}
