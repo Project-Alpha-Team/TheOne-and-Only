@@ -158,3 +158,29 @@ button {
     background-size: cover;
     width: 50%;
 }
+
+.text-wrap {
+    width: 60%;
+    /* top: 49%; */
+    padding-top: 68px;
+    padding-left: 66px;
+    font-size: 38px;
+    font-weight: 200;
+    /* text-align: center; */
+    /* display: flex; */
+}
+
+.text-wrap2 {
+    width: 60%;
+    /* top: 49%; */
+    padding-top: 68px;
+    padding-left: 45px;
+    font-size: 38px;
+    font-weight: 200;
+    /* text-align: center; */
+    /* display: flex; */
+}
+
+.text-wrap h2 {
+    font-weight: 500;
+}
