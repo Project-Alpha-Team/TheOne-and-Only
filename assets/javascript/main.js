@@ -1,5 +1,14 @@
 $(document).ready(function()
-{
+{   
+    var map = new L.map('mapid2').setView([0, 0], 12);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXJqdW5hbGFwc2Fwa290YSIsImEiOiJjampkdDlwYnkxNjV1M3dxa2cxdDZ5OXgwIn0.XkQ9e9ccEuhN0FV1pC6q3Q', {
+        attribution: '',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiYXJqdW5hbGFwc2Fwa290YSIsImEiOiJjampkdDlwYnkxNjV1M3dxa2cxdDZ5OXgwIn0.XkQ9e9ccEuhN0FV1pC6q3Q'
+        }).addTo(map);
+
+    $("#mapid2").hide();
     $(".lyrics").hide();
     // Basic URL with application-key for search 
     var URL="http://api.eventful.com/json/events/search?app_key=5gPscV7SZB2jTK6n&q=music"
@@ -45,7 +54,9 @@ $(document).ready(function()
               
               var information=$("<div>");
               information.addClass("text-center");
-              var result=res.events.event[i];
+              
+              var result=res.events.event[i];               // result
+              
               if(result.image!=null)
               {
                 var imgResponse=result.image.medium.url;
@@ -57,10 +68,21 @@ $(document).ready(function()
               }
             //   $("#picture").append(image);}
             //   $("#picture").append("Venue :" + result.venue_name);
+            var thelatitude = result.latitude;
+            console.log("the latitude is :", thelatitude);
+            var thelongitude = result.longitude;
+            console.log("the longitude is :", thelongitude);
+            
+            var thecity = result.city_name;
+            var thecountry = result.country_name;
+            var thevenu = result.venue_name;
+            var thevenueadress = result.venue_address;
+
+
               information.append("<br>");
               information.append("Title : <strong>"+result.title+"</strong><br>");
               information.append("venue : <strong>"+result.venue_name+"</strong><br>");
-              information.append("Address : "+result.venue_address+"<br>");
+              information.append("<span class='venue-address' data-lat='" + thelatitude + "' data-lon='" + thelongitude + "' data-venue='" + thevenu + "' data-url='" + result.url + "'>Address: " + thevenueadress + "</span><br>");
               information.append("City  : <strong>"+result.city_name+"</strong><br>");
               information.append("Country : <strong>"+result.country_name+"</strong><br>");
               information.append("Date & Time : "+result.start_time+"<br>");
@@ -83,38 +105,7 @@ $(document).ready(function()
         $("#artist-name").val("");
         $("#location").val("");
         $("#date").val("");
-        {
-                // lets detect which information has been entered
-            // and return the search parameter
-            // if(artist!=="" && location=="" && date=="") 
-            // {
-            //     // artist value is not null , user entered the artist name
-            //     // search should be by artist
-            //     parameter="&keywords="+artist;
-            //     musixmatch();
-            // }
-            // else if(location!=="" && artist=="" &&date==""){
-            //     // if artist value is null and location value is not null 
-            //     parameter="&l="+location;
-
-            // } 
-            // else if(date!==""  && location=="" && artist=="" ){
-            //     parameter="&date="+date;
-            // }
         
-            
-            // else{
-            //     if(artist!=="")
-            //     {parameter=parameter+"&keywords="+artist;}
-            //     if(location!==""){
-            //         parameter=parameter+"&l="+location;
-
-            //     }
-            //     if(date!==""){
-            //         parameter=parameter+"&date="+date;
-            //     }
-            // }
-        }
         
             if(artist!=="")
             {
@@ -173,4 +164,17 @@ $(document).ready(function()
             });
             //return 0;
     }
+    $("body").on('click', '.venue-address', function () {
+        $("#mapid2").show();
+        console.log('address was clicked', $(this));
+        var long = $(this).data('lon');
+        var lat = $(this).data('lat');
+        var venue = $(this).data('venue');
+        var url = $(this).data('url');
+        $("#mapid2").get(0).scrollIntoView();
+
+      
+        map.setView([lat, long], 12);
+        L.marker([lat,long]).addTo(map);
+    })
 });

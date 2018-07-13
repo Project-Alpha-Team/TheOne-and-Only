@@ -3,7 +3,13 @@ body {
     background-color: white;
     margin: inherit;
 }
-
+.venue-address {
+    cursor: pointer;
+    text-decoration: underline;
+ }
+#mapid2{
+    height: 550px; width:950px;
+}
 .list-items-color {
     background-color: rgba(231, 245, 253, 0.7);
 }
