@@ -1,299 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link href='assets/css/reset.css'rel="stylesheet" type="text/css">
-  <link href='assets/css/style.css'rel="stylesheet" type="text/css">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   
-
-  <title>Bandwagon</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+    integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+    crossorigin=""></script>
+    <script src="assets/javascript/main.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        body
+        {
+            background-image:url(back2.jpg);
+            height:100%;
+            background-position:right;
+            background-repeat:no-repeat;
+            background-size:cover;
+        } 
+    </style>
 </head>
 <body>
-    <div class="container-fluid megatron">
-      <div class="row">
-      
-        <div class='head-img-wrapper col-12'>
-          <img src='assets/img/bg-masthead.jpg' alt='picture of live concert as theme for the web page.'>
-        </div>
-        <div class='title-wrapper'>
-          <h1>Get on the bandwagon</h1>
+
+        <header>
+                <div class='head-img-wrapper'>
+                  <img src='assets/images/bg-masthead.jpg' alt='picture of live concert as theme for the web page.'>
+                </div>
+                <div class='title-wrapper'>
+                  <h1 class="text-light">Get on the bandwagon</h1>
+                
+                  <!-- <div class='component-wrapper text-format'> -->
+                    
+                    <div class='form-wrapper text-format'>
+                      <form class='form-attribute'>
+                          <div class='form-group'>
+                              <input type="name" class="form-control" id="artist-name" placeholder="Taylor Swift">
+                          </div>
           
-          <!-- <div class='component-wrapper text-format'> -->
-            
-            <div class='row justify-content-md-center'>
-              <form class='row justify-content-center'>
-                <div class='h0 col-4 col-sm-12'>
-                  <input type="name" class="form-control" id="artist-name" placeholder="Who's event are you look for?">
+                          <div class='form-group'>
+                              <input type="location" class="form-control" id="location" placeholder="Berkeley">
+                          </div>
+          
+                          <div class='form-group'>
+                              <input type="text" class="form-control" id="date" placeholder="2018-08-20">
+                          </div>
+          
+                          <input type="submit" class="btn btn-warning" id='submit' value="search">
+                      </form>
+                    </div>
+                  </div>
                 </div>
-                
-                <div class='h0 col-4 col-sm-12'>
-                  <input type="location" class="form-control" id="location" placeholder="Location">
-                </div>
-                
-                <div class='h0 col-4 col-sm-12'>
-                  <input type="text" class="form-control" id="date" placeholder="Dates">
-                </div>
-                <br>
-                <br>
-                <button type="submit" class="btn col-4 col-sm-12" id='serch-btn'>Hit it!</button>
-              </form>
-            </div>
-          </div>
-        </div>
- 
-      </div>
-     
-    </div>  <!-- container -->
-      
-    <section class='img-showcase'>
-      <div class='main-container'>
+              </header>
 
-        <div class='row sqht'>
-          <div class='show-case-text'>
-            <div class='text-wrap'>
-              <h2>Artist</h2>
-              <p class='lead'>Placeholderrrrr</p>
+    <div class="container hide-show">
+        <div class="jumbotron list-items">
+            <div class="lyrics">
+                <div>
+                    <h4 class="font-fashion text-center">Popular song By :<span class="artist"></span></h4>
+                </div>
+                <hr class="bg-warning">
+                <textarea class="lyric form-control text-center bg-dark text-light" rows="7"></textarea>
             </div>
-          </div>
-          <div class='first-img'></div>
+            <hr class="bg-warning">
+            <h2 class="text-center font-fashion"> List of all the Events</h2>
+            <hr class="bg-warning">
+
+            <section id="information">
+                <div id="picture">
+
+                </div>
+            </section>
         </div>
+
+    </div>
+   
+    <div class="navbar">
+        <div id="contact">
+            <div class="section-content">
+                <h1 class="section-header">
+                    Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span>
+                </h1>
+            </div>
+            <div class="contact-section">
+                <div class="container">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-4 form-line">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername">Your name</label>
+                                    <input type="text" class="form-control" id="" placeholder=" Enter Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Email Address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+                                </div>	
+                                  
+                            </div>
+
+                            <div class="col-sm-4 form-line">
+                                  <div class="form-group">
+                                      <label for ="description"> Message</label>
+                                       <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+                                  </div>
+                                  <div>
         
-        <div class='row sqht'>
-          <div class='second-img'></div>
-          <div class='show-case-text'>
-            <div class='text-wrap2'>
-              <h2>Location</h2>
-              <p class='lead'>Placeholderrrrr</p>
-            </div>
-          </div>
-        </div>
+                                      <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                                  </div>
+                                  
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div id="mapid"></div>
+                                    <div class="float-left text-light">
+                                            <strong>Project Alpha-Team</strong><br>1995 University Ave<br> Berkeley, CA 945670<br>
+                                           
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+    <script>
+        var mymap = L.map('mapid').setView([ 37.87206709066595,-122.27125257253647], 16);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXJqdW5hbGFwc2Fwa290YSIsImEiOiJjampkdDlwYnkxNjV1M3dxa2cxdDZ5OXgwIn0.XkQ9e9ccEuhN0FV1pC6q3Q', {
+        attribution: '',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiYXJqdW5hbGFwc2Fwa290YSIsImEiOiJjampkdDlwYnkxNjV1M3dxa2cxdDZ5OXgwIn0.XkQ9e9ccEuhN0FV1pC6q3Q'
+        }).addTo(mymap);
+        L.marker([37.87206709066595,-122.27125257253647]).addTo(mymap);
 
-        <div class='row sqht'>
-            <div class='show-case-text'>
-              <div class='text-wrap'>
-                <h2>Dates</h2>
-                <p class='lead'>Placeholderrrrr</p>
-              </div>
-            </div>
-            <div class='third-img'></div>
-        </div>
-
-      </div>
-
-    </section>
-  
-  <script src='assets/javascript/app.js'></script>
+    </script>
 </body>
-
-<footer>
-
-</footer>
 </html>
-
-
-  <!-- <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Bandwagon</title>
-
-    <! Bootstrap core CSS -->
-    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-
-    <!-- Custom fonts for this template -->
-    <!-- <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> -->
-
-    <!-- Custom styles for this template -->
-    <!-- <link href='assets/css/landing-page.min.css'rel="stylesheet">
-
-  </head>
-
-  <body> -->
-
-    <!-- Navigation -->
-    <!-- <nav class="navbar navbar-light bg-light static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Bandwagon</a>
-      </div>
-    </nav> -->
-
-    <!-- Masthead -->
-    <!-- <header class="masthead text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Get on the bandwagon</h1>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Who do you want to see?">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Hit it!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </header> -->
-
-    <!-- Image Showcases -->
-    <!-- <section class="showcase">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters">
-
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg');"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>Song Lyrics</h2>
-            <p class="lead mb-0">PLACEHOLDER TEXT</p>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg');"></div>
-          <div class="col-lg-6 my-auto showcase-text">
-            <h2>Biography</h2>
-            <p class="lead mb-0">PLACEHOLDER TEXT</p>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg');"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2>SUBMIT REVIEW BOX/BUTTON COMING SOON</h2>
-            <p class="lead mb-0">PLACEHOLDER FOR BOX/BUTTON</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <b Meet the team/Testimonial -->
-    <!-- <section class="testimonials text-center bg-light">
-      <div class="container">
-        <h2 class="mb-5">Meet the Bandwagon Team!</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="">
-              <h5>Maryam S.</h5>
-              <p class="font-weight-light mb-0">"Thanks you so much for visiting our site guys!"</p>
-            </div>
-            <div class="col-lg-4">
-              <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="">
-                <h5>Jeff E.</h5>
-                <p class="font-weight-light mb-0">"This website is monotized by JSE coin"</p>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="">
-              <h5>Arjun S.</h5>
-              <p class="font-weight-light mb-0">"Feel free to send us an email"</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-              <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="">
-              <h5>Taka K.</h5>
-              <p class="font-weight-light mb-0">"enjoy ur time"</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>  -->
-
-    <!-- Call to Action -->
-    <!-- <section class="call-to-action text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h2 class="mb-4">Sign up now for our mailing list.</h2>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Footer -->
-    <!-- <footer class="footer bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-            </ul>
-            <p class="text-muted small mb-4 mb-lg-0">&copy; Bandwagon 2018. All Rights Reserved.</p>
-          </div>
-          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-facebook fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-twitter fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer> -->
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-</html> -->
