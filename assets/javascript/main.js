@@ -25,9 +25,20 @@ $(document).ready(function()
 
     // When user enters the information and clicks the button 
     $("#picture").empty();
-    $("#submit").on("click", function() 
-    {
-        event.preventDefault();                 // prevent the default action
+    $('#sendform').click(function(event) { 
+
+        event.preventDefault();
+    if ($("#artist-name").val() == "" && $("#location").val() == "" && $("#date").val() == "" ){
+        console.log('swal runs')
+        swal({
+            title: 'We dont know what you want!',
+            animation: false,
+            footer: "input a band!",
+            customClass: 'animated tada'
+          })
+    
+    } else {
+    
         $(".lyrics").hide();
         // a fucntion which will detect which information has been entered ,
         // which will be used to build the URL
@@ -89,7 +100,7 @@ $(document).ready(function()
               information.append("<hr class=\"bg-dark\">");
               $("#picture").append(information); } 
           });
-    });
+    }});
     function getParameter()
     {
         //reading value from the form
